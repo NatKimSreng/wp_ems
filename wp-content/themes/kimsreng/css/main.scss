@@ -1,0 +1,90 @@
+// primarycustom
+
+$primary: rgb(127, 24, 127);
+$gray: #e6e6e6;
+
+$theme-colors: (
+  "primary": $primary,
+  "gray": $gray,
+);
+
+$custom-color: (
+  "icon-background": rgb(127, 24, 127, 0.2),
+  "icon-color": rgb(127, 24, 127),
+);
+
+$theme-colors: map-merge($theme-colors, $custom-color);
+
+@import "./bootstrap/scss/bootstrap";
+
+// custom css
+
+.annountcement-bar {
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--bs-gray);
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0 -10px;
+    li {
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+
+      .bi {
+        background-color: var(--bs-icon-background);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 6px;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.site-header {
+  .aws-search-field {
+    font-size: 0.9rem;
+    border-radius: 20px !important;
+    padding-left: 5px;
+  }
+  &__logo {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.main-navigation {
+  font-weight: 600;
+
+  .current-menu-item > a {
+    background-color: rgb(167, 63, 167);
+  }
+  a {
+    color: var(--bs-white);
+    padding: 1rem 1.4rem;
+  }
+  a:hover {
+    color: var(--bs-gray);
+    background-color: rgb(167, 63, 167);
+  }
+  .menu-toggle {
+    background-color: $primary;
+    color: $white;
+    border: none;
+  }
+}
+#place_order {
+  display: block !important;
+  visibility: visible !important;
+}

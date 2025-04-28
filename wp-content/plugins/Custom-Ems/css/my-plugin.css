@@ -1,0 +1,382 @@
+/* Root Variables for Easy Customization */
+:root {
+  --primary-color: #00b4d8;
+  --primary-hover: #0096c7;
+  --danger-color: #ff006e;
+  --danger-hover: #e60060;
+  --accent-color: #7209b7;
+  --bg-gradient: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-color: #1d3557;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* General Wrapper */
+.custom-ems .wrap {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: 25px 25px 25px 0;
+  max-width: 1400px;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+.custom-ems h1 {
+  color: var(--text-color);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Notifications */
+.custom-ems .updated,
+.custom-ems .error {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.custom-ems .updated {
+  background: linear-gradient(90deg, #a9e4a9, #c8e6c9);
+  border-left: 5px solid #2e7d32;
+  color: #2e7d32;
+}
+
+.custom-ems .error {
+  background: linear-gradient(90deg, #ff9999, #ffcdd2);
+  border-left: 5px solid var(--danger-color);
+  color: var(--danger-color);
+}
+
+.custom-ems .updated:hover,
+.custom-ems .error:hover {
+  transform: scale(1.02);
+}
+
+/* Employee List Table */
+.custom-ems .wp-list-table {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+}
+
+.custom-ems .wp-list-table th {
+  background: var(--bg-gradient);
+  color: #fff;
+  font-weight: 600;
+  padding: 15px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.custom-ems .wp-list-table td {
+  padding: 15px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.custom-ems .wp-list-table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.custom-ems .wp-list-table tr:hover {
+  background: rgba(0, 180, 216, 0.1);
+  transform: translateX(5px);
+  transition: all 0.2s ease;
+}
+
+/* Action Buttons */
+.custom-ems .button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.custom-ems .button-primary {
+  background: var(--primary-color);
+  border-color: var(--primary-hover);
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 180, 216, 0.3);
+}
+
+.custom-ems .button-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 180, 216, 0.5);
+}
+
+.custom-ems .button-link-delete {
+  background: var(--danger-color);
+  border-color: var(--danger-hover);
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(255, 0, 110, 0.3);
+  text-decoration: none;
+}
+
+.custom-ems .button-link-delete:hover {
+  background: var(--danger-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 0, 110, 0.5);
+}
+
+/* Button Hover Effect */
+.custom-ems .button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.custom-ems .button:hover::before {
+  left: 100%;
+}
+
+/* Form Styling */
+.custom-ems .form-table {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: var(--shadow);
+}
+
+.custom-ems .form-table th {
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 15px 25px 15px 0;
+  width: 220px;
+  font-size: 15px;
+}
+
+.custom-ems .form-table td {
+  padding: 15px 0;
+}
+
+.custom-ems .form-table input[type="text"],
+.custom-ems .form-table input[type="email"] {
+  width: 100%;
+  max-width: 450px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.custom-ems .form-table input[type="text"]:focus,
+.custom-ems .form-table input[type="email"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+  outline: none;
+}
+
+/* Delete Confirmation */
+.custom-ems .delete-confirmation {
+  background: linear-gradient(135deg, #fff, #ffe6e6);
+  padding: 25px;
+  border: 2px solid var(--danger-color);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: var(--shadow);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.custom-ems .delete-confirmation p {
+  font-size: 18px;
+  color: var(--danger-color);
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* No Employees Message */
+.custom-ems .no-employees {
+  font-size: 18px;
+  color: var(--text-color);
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 782px) {
+  .custom-ems .wrap {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .custom-ems .form-table th,
+  .custom-ems .form-table td {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .custom-ems .form-table input[type="text"],
+  .custom-ems .form-table input[type="email"] {
+    max-width: 100%;
+  }
+
+  .custom-ems .wp-list-table th,
+  .custom-ems .wp-list-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .custom-ems .button {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .custom-ems h1 {
+    font-size: 24px;
+  }
+}
+
+/* Hover Animation for Cards */
+.custom-ems .wrap:hover,
+.custom-ems .form-table:hover,
+.custom-ems .delete-confirmation:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+/* custom-employee-table.css */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrap h1 {
+  font-size: 2.2em;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-bottom: 2px solid #0073aa;
+  padding-bottom: 10px;
+}
+
+.no-employees {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ems-search-form {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ems-search-form input[type="search"] {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ems-search-form input[type="submit"],
+.ems-search-form a.button {
+  padding: 8px 16px;
+  background: #0073aa;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ems-search-form a.button {
+  background: #d63638;
+}
+
+.ems-search-form input[type="submit"]:hover,
+.ems-search-form a.button:hover {
+  opacity: 0.9;
+}
+
+.ems-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ems-table th,
+.ems-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.ems-table th {
+  background: #f4f4f4;
+}
